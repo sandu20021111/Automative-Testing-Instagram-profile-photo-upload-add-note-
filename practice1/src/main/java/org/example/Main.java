@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         // Step 1: Set path to ChromeDriver
-        System.setProperty("webdriver.chrome.driver", "C:\\Browser drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "YOUR_PATH\\chromedriver.exe");
 
         // Step 2: Launch Chrome in normal mode
         ChromeOptions options = new ChromeOptions();
@@ -51,7 +51,7 @@ public class Main {
 
         // ✅ Step 8: Navigate to your profile
         //navigate home page after upload post
-        driver.get("https://www.instagram.com/sandu.vihanga22/");
+        driver.get("YOUR_PROFILE_URL");
         System.out.println("✅ Navigated to profile.");
         Thread.sleep(5000);
         takeScreenshot(driver, "2_profile");
@@ -68,7 +68,7 @@ public class Main {
         WebElement noteTextArea = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[@role='textbox' or @aria-label='Share a thought...']")));
         noteTextArea.click();
-        noteTextArea.sendKeys("Hi I am sanduni vihanga. Happy to meet you!!");
+        noteTextArea.sendKeys("Hi I am sanduni vihara. Happy to meet you!!");
         Thread.sleep(3000);
         takeScreenshot(driver, "6_fillnote");
 
@@ -105,7 +105,7 @@ public class Main {
         Thread.sleep(2000);  // Wait for file dialog to open
 
         // Step 15: Upload image using Robot
-        String imagePath = "C:\\Users\\Acer\\Desktop\\selenium\\practice1\\src\\image\\pet1.jpg";
+        String imagePath = "YOUR_PATH\\practice1\\src\\image\\pet1.jpg";
 
         // Copy image path to clipboard
         StringSelection selection = new StringSelection(imagePath);
@@ -137,7 +137,7 @@ public class Main {
         try {
             TakesScreenshot screenshot = (TakesScreenshot) driver;
             File src = screenshot.getScreenshotAs(OutputType.FILE);
-            File dest = new File("C:\\Users\\Acer\\Desktop\\selenium\\practice1\\src\\screenshot\\" + fileName + ".jpg");
+            File dest = new File("YOUR_PATH\\practice1\\src\\screenshot\\" + fileName + ".jpg");
             dest.getParentFile().mkdirs(); // create folder if not exists
             org.openqa.selenium.io.FileHandler.copy(src, dest);
             System.out.println(" Screenshot saved: " + dest.getAbsolutePath());
